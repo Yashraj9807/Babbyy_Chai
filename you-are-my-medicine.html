@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>For My Babbyy 💖</title>
+    <style>
+        body {
+            background: linear-gradient(#fff1f5, #ffe4ec);
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            padding: 40px;
+            overflow-x: hidden;
+        }
+        
+        #medicine,
+        .message,
+        .scene,
+        #finalTeddy {
+            display: none;
+        }
+        
+        #medicine {
+            width: 150px;
+            margin: 50px auto;
+            cursor: pointer;
+        }
+        
+        .crossed {
+            filter: grayscale(100%) brightness(50%);
+            position: relative;
+        }
+        
+        .crossed::after {
+            content: "❌";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 60px;
+            color: red;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .message,
+        .sceneText {
+            font-size: 1.5rem;
+            color: #ff3399;
+            margin-top: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .scene img {
+            width: 220px;
+            margin-top: 20px;
+        }
+        
+        #finalTeddy img {
+            width: 150px;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>💊 Tap to Feel Better Babbyy 💊</h1>
+
+    <!-- Medicine Sticker -->
+    <img id="medicine" src="medicine.gif.gif" alt="Medicine Sticker">
+
+    <div id="message1" class="message">Yeh vaali nahi aao dusri du</div>
+
+    <!-- Scene 1: Boy Kissing Girl -->
+    <div id="scene1" class="scene">
+        <img src="kiss.gif.gif" alt="Kiss">
+    </div>
+
+    <!-- Scene 2: Hug + Message -->
+    <div id="scene2" class="scene">
+        <img src="hug1.gif.gif" alt="Hug 1">
+        <div class="sceneText">Kl Birthday h jra meri babbyy ka ab ek smile toh kr he do</div>
+    </div>
+
+    <!-- Scene 3: Another Hug + Message -->
+    <div id="scene3" class="scene">
+        <img src="hug2.gif.gif" alt="Hug 2">
+        <div class="sceneText">Aao acchaa ek aur hug krlu</div>
+    </div>
+
+    <!-- Final Scene: Teddy with Tea -->
+    <div id="finalTeddy" class="scene">
+        <img src="teddytea.gif.gif" alt="Teddy Tea">
+        <div class="sceneText">Sham ki chai meri taraf se lo babbyy ☕🐻</div>
+    </div>
+
+    <script>
+        const medicine = document.getElementById("medicine");
+        const msg1 = document.getElementById("message1");
+        const scene1 = document.getElementById("scene1");
+        const scene2 = document.getElementById("scene2");
+        const scene3 = document.getElementById("scene3");
+        const finalTeddy = document.getElementById("finalTeddy");
+
+        medicine.style.display = 'block';
+
+        medicine.addEventListener("click", () => {
+            medicine.classList.add("crossed");
+            msg1.style.display = 'block';
+
+            setTimeout(() => {
+                scene1.style.display = 'block';
+            }, 1500);
+
+            setTimeout(() => {
+                scene2.style.display = 'block';
+            }, 3500);
+
+            setTimeout(() => {
+                scene3.style.display = 'block';
+            }, 5500);
+
+            setTimeout(() => {
+                finalTeddy.style.display = 'block';
+            }, 7500);
+        });
+    </script>
+
+</body>
+
+</html>
